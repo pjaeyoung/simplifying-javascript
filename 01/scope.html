@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>클릭하면 0</li>
+        <li>클릭하면 1</li>
+        <li>클릭하면 2</li>
+    </ul>
+    <script>
+        var items = document.querySelectorAll('li');
+
+        // 결과는 모두 3으로 alert창이 표시 
+        for(var i = 0; i < items.length; i++){
+            items[i].onClick = function(){
+                alert(i);
+            };
+        }
+
+        // var 로 문제 해결시 아래처럼 복잡해짐
+        // 클로저 + 고차 함수 + 즉시실행함수 
+        for(var i = 0; i < items.length; i++){
+            items[i].onClick = (function(i){
+                return function(){
+                    alert(i);
+                }
+            }(i));
+        }
+
+        //let을 사용하면 for문이 반복될 때마다 값이 고정됨 
+        for(let i = 0; i < items.length; i++){
+            items[i].onclick = function(i){
+                alert(i);
+            };
+        }
+    </script>
+</body>
+</html>
