@@ -1,0 +1,11 @@
+## const를 변하지 않는 값으로 표현하라
+
+const : 블록의 문맥 내에서 재할당할 수 없는 변수 선언
+        배열 항목, 객체 속성값 수정 가능 
+        const를 많이 사용할 수록 반복문/조건문/재할당 과 같이 변경할 수 있는 코드를 신경쓰지 않아도 됨(배열, 객체 제외)
+
+## let과 const로 유효범위 충돌을 줄여라 
+var : 어휘적 유효범위(lexical scope)를 따름
+let : 블록 범위(block scope)를 따름, 주로 중괄호를 쓰는 경우(for문, if문, 함수)
+
+[예제](https://github.com/pjaeyoung/simplifying-javascript/blob/main/01/getLowestPrice.ts)
